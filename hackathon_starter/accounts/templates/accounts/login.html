@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+    {% include 'accounts/base.html' %}
+    <style>
+       body {
+        background-color: #4688F1;
+      }
+
+      .form-signin {
+        max-width: 450px;
+        padding: 15px;
+        margin: 0 auto;
+      }
+
+      #logo {
+        font-size: 50px;
+        font-color: #FFFFFF;
+        text-align: center;
+      }
+
+      .card {
+        /* Add shadows to create the "card" effect */
+        background-color: #FBFBFB;
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        transition: 0.3s;
+        width: 500px;
+        border-radius: 5px;
+        margin: auto;
+        width: 50%;
+        padding: 20px;
+    }
+
+    /* On mouse-over, add a deeper shadow */
+    .card:hover {
+        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    }
+
+    /* Add some padding inside the card container */
+    .container {
+        padding: 2px 16px;
+    }
+
+    </style>
+
+    <body>
+   <!--  <div>
+      <h1 id="logo">Going</h1>
+    </div> -->
+    <div class="card center text-center">
+        <form class="form-signin" id="login_form" method="post" action="/accounts/login/">
+          {% csrf_token %}
+          {% load bootstrap %}
+          <h2 class="form-signin-heading">Login</h2>
+          <br>
+          <input type="text" name="username" class="form-control" placeholder="Username" value="" required autofocus>
+          <br>
+          <input type="password" name="password" class="form-control" placeholder="Password" value=""required>
+          <br>
+          <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+          <input type="hidden" name="submit" value="submit" />
+        </form>
+      </div>
+   <!--  </div> -->
+
+ <!--      <div class="form-signin">
+        <a class="btn btn-block btn-social btn-twitter" href="http://127.0.0.1:8000/accounts/twitter_login/">
+          <i class="fa fa-twitter"></i>
+          Sign in with Twitter
+        </a>
+        <a class="btn btn-block btn-social btn-instagram" href="http://localhost:8000/accounts/instagram_login/">
+          <i class="fa fa-instagram"></i>
+          Sign in with Instagram
+        </a>
+        <a class="btn btn-block btn-social btn-tumblr" href="http://localhost:8000/accounts/tumblr_login/">
+          <i class="fa fa-tumblr"></i>
+          Sign in with Tumblr
+        </a>
+        <a class="btn btn-block btn-social btn-github" href="http://localhost:8000/accounts/github_login/">
+          <i class="fa fa-github"></i>
+          Sign in with Github
+        </a>
+        <a class="btn btn-block btn-social btn-linkedin" href="http://localhost:8000/accounts/linkedin_login/">
+          <i class="fa fa-linkedin"></i>
+          Sign in with LinkedIn
+        </a>
+        <a class="btn btn-block btn-social btn-facebook" href="http://localhost:8000/accounts/facebook_login/">
+          <i class="fa fa-facebook"></i>
+          Sign in with Facebook
+        </a>
+        <a class="btn btn-block btn-social btn-google" href="http://localhost:8000/accounts/google_login/">
+          <i class="fa fa-google"></i>
+          Sign in with Google+
+        </a>
+        <a class="btn btn-block btn-social btn-dropbox" href="http://localhost:8000/accounts/dropbox_login/">
+          <i class="fa fa-dropbox"></i>
+          Sign in with Dropbox
+        </a>
+        <a class="btn btn-block btn-social btn-foursquare" href="http://localhost:8000/accounts/foursquare_login/">
+          <i class="fa fa-foursquare"></i>
+          Sign in with Foursquare
+        </a>
+      </div> -->
+    </body>
+</html>

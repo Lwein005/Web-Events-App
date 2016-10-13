@@ -36,12 +36,13 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'hackathon',
+    'accounts',
     'bootstrapform',
     # 'django_openid',
     'django_nose',
     'rest_framework',
     'corsheaders',
+    'actstream',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -98,7 +99,7 @@ TEST_RUNNER = 'django_nose.NoseTestSuiteRunner'
 # Tell nose to measure coverage on the 'foo' and 'bar' apps
 NOSE_ARGS = [
     '--with-coverage',
-    '--cover-package=hackathon/scripts',
+    '--cover-package=accounts/scripts',
 ]
 
 CORS_ORIGIN_ALLOW_ALL = True
