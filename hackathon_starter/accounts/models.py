@@ -7,7 +7,7 @@ from django.utils import timezone
 class UserProfile(models.Model):
     # This line is required. Links UserProfile to a User model instance.
     user = models.OneToOneField(User)
-
+    userprofilepic = models.FileField()
     # Override the __unicode__() method to return out something meaningful!
     def __unicode__(self):
         return self.user.username
@@ -23,12 +23,10 @@ class Profile(models.Model):
 class Event(models.Model):
     host = models.ForeignKey(User)
     title = models.CharField(max_length=100)
+    event_photo = models.FileField()
     text = models.TextField()
     created_date = models.DateTimeField(default=timezone.now)
     attendee_count = models.IntegerField()
-
-    def __unicode__(self):
-        return unicode(self.user)
 
     def __str__(self):
         return self.title

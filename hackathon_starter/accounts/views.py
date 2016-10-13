@@ -9,6 +9,7 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 from django.views.decorators.csrf import csrf_exempt
+from django.utils import timezone
 from django.http import JsonResponse
 
 # Django REST Framework
@@ -310,6 +311,9 @@ def index(request):
     context = {'hello': 'world'}
     return render(request, 'accounts/index.html', context)
 
+def event_list(request):
+    events = Event.objects.filter(created_date__lte=timezone.now()).order_by('created_date')
+    return render(request, 'accounts/api_examples.html', {'events': events})
 
 ##################
 #  API Examples  #
