@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+{% include 'accounts/base.html' %}
+<html>
+<head>
+	<title></title>
+</head>
+<style>
+	.eventcard {
+	 background-color: #FBFBFB;
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.3);
+        transition: 0.3s;
+        width: 500px;
+        word-wrap: break-word;
+        border-radius: 5px;
+        margin: auto;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        width: 50%;
+        padding: 15px;
+
+}
+</style>
+<body>
+
+ <div class="eventcard">
+        <h1><a href="">{{ event.title }}</h1>
+
+        {% if event.event_photo %}
+        <div class="thumbnail">
+         <img src='{{ event.event_photo.url }}' class='img-responsive' />
+         </div>
+        {% endif %}
+
+        <p>published: {{ event.created_date }}</p>
+        <p style= "font-color: #000000;">Description:</style> {{ event.text|linebreaksbr }}</p>
+        <p>Required guest count: {{ event.attendee_count }}</p>
+    </div>
+
+<!-- <div class="eventcard">
+	<h1>New Event</h1>
+    <form method="POST" class="event-form">{% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="save btn btn-default">Save</button>
+    </form>
+</div> -->
+
+
+</body>
+</html>
